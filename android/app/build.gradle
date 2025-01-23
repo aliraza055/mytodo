@@ -1,0 +1,55 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.mytodo"
+    compileSdk = flutter.compileSdkVersion // Use Flutter's compileSdkVersion
+
+    defaultConfig {
+        // Specify a unique Application ID for your project
+        applicationId = "com.example.mytodo"
+        
+        // Use Flutter's minSdkVersion (Remove redundant declarations)
+        minSdk = flutter.minSdkVersion
+        minSdkVersion 23
+        // Use Flutter's targetSdkVersion
+        targetSdk = flutter.targetSdkVersion
+
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildTypes {
+        release {
+            // Use debug signing config for now; replace it for production
+            signingConfig = signingConfigs.debug
+        }
+    }
+    
+    ndkVersion = flutter.ndkVersion // Use Flutter's ndkVersion
+}
+
+flutter {
+    source = "../.."
+}
+
+apply plugin: "com.android.application"
+apply plugin: "com.google.gms.google-services" // Ensure the Google services plugin is applied
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:33.5.0') // Firebase BOM for version alignment
+    implementation 'com.google.firebase:firebase-analytics'          // Firebase Analytics
+}
