@@ -16,7 +16,7 @@ class _TodoPageState extends State<TodoPage> {
     return  Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title:const Text('Notes'),
+        title:const Text('All Notes'),
         centerTitle: true
       ),
       body: Column(
