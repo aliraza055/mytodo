@@ -62,63 +62,50 @@ class _TodoPageState extends State<TodoPage> {
                      mainAxisSize: MainAxisSize.min,
                       children: [
                     IconButton(
-  icon: const Icon(Icons.edit, color: Colors.blue),
-  onPressed: () {
-    final doc = items[index]; // Get the document to edit
-    showDialog(
-      context: context,
-      builder: (context) {
-        final titleController = TextEditingController(text: doc['title']);
-        final descriptionController = TextEditingController(text: doc['description']);
+                 icon:const Icon(Icons.edit, color: Colors.blue),
+                 onPressed: () {
+                final doc = items[index]; // Get the document to edit
+              showDialog(
+                   context: context,
+                    builder: (context) {
+                    final titleController = TextEditingController(text: doc['title']);
+                   final descriptionController = TextEditingController(text: doc['description']);
 
         return AlertDialog(
-          title: const Text('Edit Item'),
+          title:const Text('Edit Item'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: titleController,
-                decoration: const InputDecoration(labelText: 'Title'),
+                decoration:const InputDecoration(labelText: 'Title'),
               ),
               TextField(
                 controller: descriptionController,
-                decoration: const InputDecoration(labelText: 'Description'),
+                decoration:const InputDecoration(labelText: 'Description'),
               ),
             ],
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context), // Close dialog
-              child: const Text('Cancel'),
+              child:const Text('Cancel'),
             ),
-            ElevatedButton(
-              onPressed: () async {
-                final docId = doc.id; // Get document ID
-                try {
-                  // Update the Firestore document
-                  await _ref.doc(docId).update({
-                    'title': titleController.text,
-                    'description': descriptionController.text,
-                  });
-                  // Close the dialog after successful update
-                  Navigator.pop(context);
-                  // Optionally, show a success message
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Item updated successfully')),
-                  );
-                } catch (error) {
-                  // Handle errors (e.g., Firestore update fails)
-                  print("Error updating item: $error");
-                  // Close the dialog even if there's an error
-                  Navigator.pop(context);
-                  // Optionally, show an error message
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Failed to update item: $error')),
-                  );
-                }
-              },
-              child: const Text('Save'),
-            ),
+          ElevatedButton(
+  onPressed: () async {
+    final docId = doc.id; // Get document ID
+    await _ref.doc(docId).update({
+      'title': titleController.text,
+      'description': descriptionController.text,
+    });
+
+    if (context.mounted) {
+      Navigator.pop(context); // Close dialog after update
+    }
+  },
+  child: const Text('Save'),
+),
+
           ],
         );
       },
