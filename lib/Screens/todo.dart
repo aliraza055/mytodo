@@ -74,7 +74,7 @@ class _TodoPageState extends State<TodoPage> {
         return AlertDialog(
           title:const Text('Edit Item'),
           content: Column(
-           // mainAxisSize: MainAxisSize.min,
+            mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: titleController,
