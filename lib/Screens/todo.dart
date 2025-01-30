@@ -110,17 +110,17 @@ class _TodoPageState extends State<TodoPage> {
     );
   },
 ),
-                  const  SizedBox(width: 8) ,
-                    Container(
-                      height: 35,
-                      width: 40,
-                      decoration: BoxDecoration(
-                       color: Colors.red,
-                       borderRadius: BorderRadius.circular(8)
-                      ),
-                      child:
-                      Center(
-                        child: IconButton(
+   const  SizedBox(width: 8) ,
+          Container(
+             height: 35,
+             width: 40,
+             decoration: BoxDecoration(
+             color: Colors.red,
+            borderRadius: BorderRadius.circular(8)
+              ),
+                 child:
+                     Center(
+                       child: IconButton(
                           icon:const Icon(Icons.delete, color: Colors.white),
                           onPressed: () {
                             showDialog(context: context, builder: (context){
@@ -149,7 +149,6 @@ class _TodoPageState extends State<TodoPage> {
                           },
                         ),
                       ),
-
                       ) ,              
                       ],
                      )
