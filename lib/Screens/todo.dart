@@ -123,15 +123,31 @@ class _TodoPageState extends State<TodoPage> {
                       Center(
                         child: IconButton(
                           icon:const Icon(Icons.delete, color: Colors.white),
-                          onPressed: () async {
-                            
-                            final docId = items[index].id; // Get the document ID
-                            await _ref.doc(docId).delete(); // Delete the document from Firestore
-                              if (mounted) {
+                          onPressed: () {
+                            showDialog(context: context, builder: (context){
+                              return AlertDialog(
+                                title:const Text("Are you sure to delete?",textAlign:TextAlign.center,),
+                                actions: [
+                                  TextButton(onPressed: (){
+                                    Navigator.pop(context);
+                                  }, child:const Text("No")),
+                                  ElevatedButton(onPressed: ()async{
+                                                 if (mounted) {
                               ScaffoldMessenger.of(context).showSnackBar(
                              const   SnackBar(content: Text('Item deleted successfully')),
                               );
                             }
+                                     final docId = items[index].id; // Get the document ID
+                                    await _ref.doc(docId).delete();
+                          
+                                 }, child:const Text("Yes"))
+                                ],
+
+                              );
+                            });
+
+                            // Delete the document from Firestore
+                           
                           },
                         ),
                       ),
