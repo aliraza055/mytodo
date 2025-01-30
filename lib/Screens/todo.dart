@@ -91,17 +91,15 @@ class _TodoPageState extends State<TodoPage> {
               onPressed: () => Navigator.pop(context), // Close dialog
               child:const Text('Cancel'),
             ),
-          ElevatedButton(
+         ElevatedButton(
   onPressed: () async {
+          Navigator.pop( context); // Close dialog after update
     final docId = doc.id; // Get document ID
     await _ref.doc(docId).update({
       'title': titleController.text,
       'description': descriptionController.text,
-    });
+       });
 
-    if (context.mounted) {
-      Navigator.pop(context); // Close dialog after update
-    }
   },
   child: const Text('Save'),
 ),
@@ -126,6 +124,7 @@ class _TodoPageState extends State<TodoPage> {
                         child: IconButton(
                           icon:const Icon(Icons.delete, color: Colors.white),
                           onPressed: () async {
+                            
                             final docId = items[index].id; // Get the document ID
                             await _ref.doc(docId).delete(); // Delete the document from Firestore
                               if (mounted) {
