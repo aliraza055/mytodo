@@ -110,7 +110,6 @@ class _TodoPageState extends State<TodoPage> {
     );
   },
 ),
-
                   const  SizedBox(width: 8) ,
                     Container(
                       height: 35,
@@ -126,13 +125,15 @@ class _TodoPageState extends State<TodoPage> {
                           onPressed: () {
                             showDialog(context: context, builder: (context){
                               return AlertDialog(
+                                alignment: Alignment.center,
                                 title:const Text("Are you sure to delete?",textAlign:TextAlign.center,),
                                 actions: [
                                   TextButton(onPressed: (){
                                     Navigator.pop(context);
                                   }, child:const Text("No")),
                                   ElevatedButton(onPressed: ()async{
-                                                 if (mounted) {
+                                    Navigator.pop(context);
+                                  if (mounted) {
                               ScaffoldMessenger.of(context).showSnackBar(
                              const   SnackBar(content: Text('Item deleted successfully')),
                               );
@@ -145,16 +146,11 @@ class _TodoPageState extends State<TodoPage> {
 
                               );
                             });
-
-                            // Delete the document from Firestore
-                           
                           },
                         ),
                       ),
 
-                      ) ,
-                   
-                  
+                      ) ,              
                       ],
                      )
                   ),
