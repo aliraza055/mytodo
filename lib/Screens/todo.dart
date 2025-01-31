@@ -56,7 +56,6 @@ class _TodoPageState extends State<TodoPage> {
 
                       children: [
                         Text(items[index]['description'] ?? 'No description'),
-                     //  Text(formattedDate, style:const TextStyle(fontSize: 12, color: Colors.grey)), // Timestamp
                       ],
                      ),
                      trailing:Row(
