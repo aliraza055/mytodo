@@ -64,7 +64,7 @@ class _TodoPageState extends State<TodoPage> {
                     IconButton(
                  icon:const Icon(Icons.edit, color: Colors.blue),
                  onPressed: () {
-                final doc = items[index]; // Get the document to edit
+                final doc = items[index];
               showDialog(
                    context: context,
                     builder: (context) {
