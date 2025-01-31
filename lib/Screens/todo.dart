@@ -38,7 +38,8 @@ class _TodoPageState extends State<TodoPage> {
             if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
               return const Center(child: Text('No items found.'));
             }
-            final List<DocumentSnapshot> items = snapshot.data!.docs;
+          final List items = snapshot.data!.docs;
+       //     final List<DocumentSnapshot> items = snapshot.data!.docs;
               return ListView.builder(
                 itemCount: items.length,
                 itemBuilder: (context,index){
