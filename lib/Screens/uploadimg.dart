@@ -36,14 +36,16 @@ File ? image;
         children: [
           Center(
             child: InkWell(
-              onTap: (){},
+              onTap: (){
+                imagePik();
+              },
               child: Container(
                 height: 200,
                 width: 200,
                 decoration: BoxDecoration(
                   border: Border.all()
                 ),
-                child:const Center(child: Icon(Icons.image),),
+                child:image != null ? Image.file(image!.absolute) : const Center(child: Icon(Icons.image),),
               ),
             ),
           ),
