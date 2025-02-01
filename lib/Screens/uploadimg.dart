@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UploadImage extends StatefulWidget {
   const UploadImage({super.key});
@@ -8,6 +11,15 @@ class UploadImage extends StatefulWidget {
 }
 
 class _UploadImageState extends State<UploadImage> {
+File ? image;
+  Future imagePik()async{
+  final returnedImage= await ImagePicker().pickImage(source: ImageSource.gallery);
+  if (returnedImage==null) return;
+  setState(() {
+      image =File(returnedImage.path);
+  });
+
+  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -23,13 +35,16 @@ class _UploadImageState extends State<UploadImage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
-            child: Container(
-              height: 200,
-              width: 200,
-              decoration: BoxDecoration(
-                border: Border.all()
+            child: InkWell(
+              onTap: (){},
+              child: Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  border: Border.all()
+                ),
+                child:const Center(child: Icon(Icons.image),),
               ),
-              child:const Center(child: Icon(Icons.image),),
             ),
           ),
           const SizedBox(
