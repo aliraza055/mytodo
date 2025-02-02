@@ -18,7 +18,7 @@ class _TodoPageState extends State<TodoPage> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text('All Notes', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text('All Todos', style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: Column(
