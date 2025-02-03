@@ -34,11 +34,26 @@ class _AddtodoState extends State<Addtodo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title:const Text("Add new Todo"),
-        centerTitle: true,
+     appBar: AppBar(
+  title: const Text(
+    'All Todos', 
+    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white70),
+  ),
+  centerTitle: true,
+  elevation: 10, 
+shadowColor: Colors.black.withOpacity(0.5),
+  flexibleSpace: Container(
+    
+    decoration: const BoxDecoration(
+      gradient: LinearGradient(
+        
+         colors: [Colors.blueAccent, Colors.greenAccent, Colors.teal], //
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
       ),
+    ),
+  ),
+),
       body:Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

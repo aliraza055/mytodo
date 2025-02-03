@@ -22,9 +22,13 @@ class _TodoPageState extends State<TodoPage> {
     style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white70),
   ),
   centerTitle: true,
+  elevation: 10, 
+shadowColor: Colors.black.withOpacity(0.5),
   flexibleSpace: Container(
+    
     decoration: const BoxDecoration(
       gradient: LinearGradient(
+        
          colors: [Colors.blueAccent, Colors.greenAccent, Colors.teal], //
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
