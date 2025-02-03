@@ -118,8 +118,6 @@ shadowColor: Colors.black.withOpacity(0.5),
     ),
   ),
 ),
-
-
     );
   }
 
@@ -154,7 +152,6 @@ shadowColor: Colors.black.withOpacity(0.5),
       },
     );
   }
-
   void _deleteItem(String docId) {
     showDialog(
       context: context,

@@ -40,7 +40,7 @@ if (_titleController.text.isEmpty || _desController.text.isEmpty) {
      appBar: AppBar(
   title: const Text(
     'All Todos', 
-    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white70),
+    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white70,),
   ),
   centerTitle: true,
   elevation: 10, 
@@ -99,7 +99,7 @@ shadowColor: Colors.black.withOpacity(0.5),
       ),
                 ),
                 child:const Center(
-                  child: Text('Add task',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                  child: Text('Add task',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.white70),),
                 ),
               ),
             )
