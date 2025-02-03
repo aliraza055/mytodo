@@ -88,7 +88,12 @@ shadowColor: Colors.black.withOpacity(0.5),
                 height: 60,
                 decoration: BoxDecoration(
                   color: Colors.blue,
-                  borderRadius: BorderRadius.circular(16)
+                  borderRadius: BorderRadius.circular(16),
+                     gradient:const LinearGradient(  
+         colors: [Colors.blueAccent, Colors.greenAccent, Colors.teal], //
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ),
                 ),
                 child:const Center(
                   child: Text('Add task',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
