@@ -19,13 +19,13 @@ class _TodoPageState extends State<TodoPage> {
     appBar: AppBar(
   title: const Text(
     'All Todos', 
-    style: TextStyle(fontWeight: FontWeight.bold),
+    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white70),
   ),
   centerTitle: true,
   flexibleSpace: Container(
     decoration: const BoxDecoration(
       gradient: LinearGradient(
-        colors: [Colors.blue, Colors.purple, Colors.red], // 🎨 3 Colors
+         colors: [Colors.blueAccent, Colors.greenAccent, Colors.teal], //
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),
