@@ -97,13 +97,29 @@ shadowColor: Colors.black.withOpacity(0.5),
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) => const Addtodo()));
-        },
-        backgroundColor: Colors.blue,
-        child: const Icon(Icons.add),
+   floatingActionButton: FloatingActionButton(
+  onPressed: () {
+    Navigator.push(context, MaterialPageRoute(builder: (_) => const Addtodo()));
+  },
+  backgroundColor: Colors.transparent, 
+  elevation: 10, 
+  child: Ink(
+    decoration: const BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Colors.blueAccent, Colors.greenAccent, Colors.teal], 
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
       ),
+      shape: BoxShape.circle, 
+    ),
+    child: const Padding(
+      padding: EdgeInsets.all(12.0),
+      child: Icon(Icons.add, color: Colors.white),
+    ),
+  ),
+),
+
+
     );
   }
 
