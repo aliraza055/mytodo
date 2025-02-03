@@ -16,11 +16,23 @@ class _TodoPageState extends State<TodoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('All Todos', style: TextStyle(fontWeight: FontWeight.bold)),
-        centerTitle: true,
+    appBar: AppBar(
+  title: const Text(
+    'All Todos', 
+    style: TextStyle(fontWeight: FontWeight.bold),
+  ),
+  centerTitle: true,
+  flexibleSpace: Container(
+    decoration: const BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Colors.blue, Colors.purple, Colors.red], // 🎨 3 Colors
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
       ),
+    ),
+  ),
+),
+
       body: Column(
         children: [
           Expanded(
