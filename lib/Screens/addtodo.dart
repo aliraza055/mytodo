@@ -14,6 +14,9 @@ class _AddtodoState extends State<Addtodo> {
   final _titleController=TextEditingController();
     final _desController=TextEditingController();
   void addTodo()async{
+if (_titleController.text.isEmpty || _desController.text.isEmpty) {
+  return;
+}
     await FirebaseFirestore.instance.collection('users').add({
       "title":_titleController.text,
       "description":_desController.text,
