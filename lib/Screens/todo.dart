@@ -17,6 +17,7 @@ class _TodoPageState extends State<TodoPage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
     appBar: AppBar(
+      automaticallyImplyLeading: false ,
   title: const Text(
     'All Todos', 
     style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white70),
