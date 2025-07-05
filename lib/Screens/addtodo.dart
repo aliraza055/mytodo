@@ -39,7 +39,7 @@ if (_titleController.text.isEmpty || _desController.text.isEmpty) {
     return Scaffold(
      appBar: AppBar(
   title: const Text(
-    'All Todos', 
+    'Add new Todo', 
     style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white70,),
   ),
   centerTitle: true,
